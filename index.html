@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOVE</title>
+    <title>FACEBOOK HACK</title>
     <style>
         body {
             margin: 0;
@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCtFpDenDOiPE88yoGoBN9jlaPnAjfy8HPpA&usqp=CAU') no-repeat center center fixed;
+            background: url('back.gif') no-repeat center center fixed;
             background-size: cover;
             color: #00ff00;
         }
@@ -34,13 +34,24 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI-54sOG3PMQ6b2uhwPfB0XYLS-eKPNgI-3w&usqp=CAU') no-repeat center center / cover; /* LOVE বাটনের ব্যাকগ্রাউন্ড ইমেজ */
+            background: url('love-button.jpg') no-repeat center center / cover; /* LOVE বাটনের ব্যাকগ্রাউন্ড ইমেজ */
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
             margin-bottom: 20px;
+        }
+
+        #prank-button span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4);
         }
 
         #overlay {
@@ -65,15 +76,17 @@
     </style>
 </head>
 <body>
-    <div id="notebook" style="white-space: nowrap;">I Love YOU 😘</div>
-    <button id="prank-button"></button> <!-- LOVE বাটনের জন্য ইমেজ যুক্ত করা -->
+    <div id="notebook" style="white-space: nowrap;">FACEBOOK HACK</div>
+    <button id="prank-button">
+        <span>LOVE</span> <!-- LOVE লেখা এখানে যুক্ত করা -->
+    </button>
 
     <div id="overlay">
         <img src="fuck.jpg" alt="Prank GIF">
     </div>
 
     <!-- Updated audio source -->
-    <audio id="prank-audio" src="fuck.mp3" loop></audio>
+    <audio id="prank-audio" src="x.mp3" loop></audio>
 
     <script>
         const button = document.getElementById('prank-button');
