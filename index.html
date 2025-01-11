@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCtFpDenDOiPE88yoGoBN9jlaPnAjfy8HPpA&usqp=CAU') no-repeat center center fixed;
+            background-size: cover;
+            color: #00ff00;
+        }
+
+        #notebook {
+            font-size: 3em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4);
+            position: absolute;
+            top: 10%;
+            z-index: 10;
+        }
+
+        #prank-button {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI-54sOG3PMQ6b2uhwPfB0XYLS-eKPNgI-3w&usqp=CAU') no-repeat center center / cover; /* LOVE বাটনের ব্যাকগ্রাউন্ড ইমেজ */
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #overlay img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="notebook" style="white-space: nowrap;">I Love YOU 😘</div>
+    <button id="prank-button"></button> <!-- LOVE বাটনের জন্য ইমেজ যুক্ত করা -->
+
+    <div id="overlay">
+        <img src="fuck.jpg" alt="Prank GIF">
+    </div>
+
+    <!-- Updated audio source -->
+    <audio id="prank-audio" src="fuck.mp3" loop></audio>
+
+    <script>
+        const button = document.getElementById('prank-button');
+        const overlay = document.getElementById('overlay');
+        const audio = document.getElementById('prank-audio');
+
+        // Fullscreen function
+        const enterFullScreen = () => {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
+            }
+        };
+
+        button.addEventListener('click', () => {
+            // Play audio in loop
+            audio.play();
+
+            // Show overlay
+            overlay.style.display = 'flex';
+
+            // Enter full-screen mode
+            enterFullScreen();
+        });
+
+        // Prevent going back and reload page
+        window.history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            alert("You cannot go back! CRASH MODE ACTIVATED!");
+            window.location.reload(); // পেজ রিলোড
+        });
+    </script>
+</body>
+</html>
